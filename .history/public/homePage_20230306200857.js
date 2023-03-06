@@ -1,4 +1,6 @@
-const logoutButton = new LogoutButton();
+const { response } = require("express");
+
+const logoutButton = new logoutButton();
 
 logoutButton.action = () => {
     const cb = (response) => {

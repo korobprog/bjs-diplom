@@ -1,4 +1,4 @@
-const logoutButton = new LogoutButton();
+const LogoutButton = new logoutButton();
 
 logoutButton.action = () => {
     const cb = (response) => {
