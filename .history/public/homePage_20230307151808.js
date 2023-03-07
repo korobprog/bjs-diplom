@@ -26,7 +26,6 @@ const updateRatesBoard = () => {
         }
     });
 }
-updateRatesBoard();
 setInterval(() => {
     updateRatesBoard();
 }, 60000);

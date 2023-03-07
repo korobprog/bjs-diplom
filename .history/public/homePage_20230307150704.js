@@ -17,16 +17,3 @@ ApiConnector.current((responce) => {
 })
 
 const ratesBoard = new RatesBoard();
-
-const updateRatesBoard = () => {
-    ApiConnector.getStocks((responce) => {
-        if (responce.success) {
-            ratesBoard.clearTable();
-            ratesBoard.fillTable(responce.data)
-        }
-    });
-}
-updateRatesBoard();
-setInterval(() => {
-    updateRatesBoard();
-}, 60000);
