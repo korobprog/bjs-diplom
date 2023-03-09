@@ -32,16 +32,11 @@ setInterval(() => {
     updateRatesBoard();
 }, 60000);
 
-// Добавление денег
 const moneyManager = new MoneyManager();
-
-moneyManager.addMoneyCallback = function (data) {
-    ApiConnector.addMoney(data, response => {
-        if (response.success) {
-            ProfileWidget.showProfile(response.data)
-            this.setMessage(true, 'Операция успешно выполнена');
-        } else {
-            this.setMessage(false, response.error);
-        }
-    })
+// Добавление денег
+moneyManager.addMoney = function (data) {
+    console.log(data)
+    moneyManager.addMoney(data, responce => responce.success
+        ? ApiConnector.showProfile()
+        : this.setMessage(isSuccess.message))
 }

@@ -39,9 +39,9 @@ moneyManager.addMoneyCallback = function (data) {
     ApiConnector.addMoney(data, response => {
         if (response.success) {
             ProfileWidget.showProfile(response.data)
-            this.setMessage(true, 'Операция успешно выполнена');
+            this.setMessage(response.success, isSuccess, message);
         } else {
-            this.setMessage(false, response.error);
+            this.setMessage(response.success, response.error, isSuccess, message);
         }
     })
 }
